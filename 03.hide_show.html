@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hide and Show</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- styles.css -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- w3.css -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+
+    <!-- prism.js -->
+    <link rel="stylesheet" href="prism.css" />
+    <script src="scripts/prism.js"></script>
+
+    <!-- link to jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <style>
+    div {
+      margin: 10px;
+    }
+    </style>
+
+  </head>
+
+  <body class="w3-margin">
+
+    <h1>Hide and Show</h1>
+
+    <p>The hide() and show() methods can be used to hide and show an element.</p>
+
+    <p>The optional speed parameter specifies the speed of the hiding and showing, and can take the following values: "slow", "fast", or milliseconds.</p>
+
+    <p>The optional callback parameter is a function to be executed after the hide or show completes.</p>
+
+    <hr />
+
+    <h3>Example: hide()</h3>
+
+    <p>The hide() method can be used to hide an element:</p>
+
+    <button id="btn1">hide()</button>
+
+    <div id="div1" style="height: 75px; width: 200px; background-color: orange;"></div>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn1").click(function() {
+        $("#div1").hide("slow");
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn1").click(function() {
+          $("#div1").hide("slow");
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: show()</h3>
+
+    <p>The show() method can be used to show an element that is previously hidden:</p>
+
+    <button id="btn2">show()</button>
+
+    <div id="div2" style="height: 75px; width: 200px; background-color: blue; display: none;"></div>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn2").click(function() {
+        $("#div2").show("slow");
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn2").click(function() {
+          $("#div2").show("slow");
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: toggle()</h3>
+
+    <p>The toggle() method can be used to hide and show an element using one button:</p>
+
+    <button id="btn3">toggle()</button>
+
+    <div id="div3" style="height: 75px; width: 200px; background-color: lime;"></div>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn3").click(function() {
+        $("#div3").toggle("slow");
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn3").click(function() {
+          $("#div3").toggle("slow");
+        });
+      });
+    </code></pre>
+
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Get and Set css() Method</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- styles.css -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- w3.css -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+
+    <!-- prism.js -->
+    <link rel="stylesheet" href="prism.css" />
+    <script src="scripts/prism.js"></script>
+
+    <!-- link to jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  </head>
+
+  <body class="w3-margin">
+
+    <h1>Get and Set Using css() Method</h1>
+
+    <p>The css() method sets or returns one or more style properties for the selected elements.</p>
+
+    <hr />
+
+    <h3>Example: css() return</h3>
+
+    <p>Use the css() method to return the value of a specified CSS property from the FIRST matched element:</p>
+
+    <p id="test1" style="background-color: orange">This is a paragraph!</p>
+    <p id="test1" style="background-color: yellow">This is another paragraph!</p>
+    <p id="test1" style="background-color: lime">And yet, another paragraph!</p>
+
+    <button id="btn1">return css()</button>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn1").click(function() {
+        alert("background-color: " + $("#test1").css("background-color"));
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn1").click(function() {
+          alert("background-color: " + $("#test1").css("background-color"));
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: css() set</h3>
+
+    <p>Use the css() method to set a specific CSS property for ALL matched elements:</p>
+
+    <p id="test2" style="background-color: pink">This is a paragraph!</p>
+    <p id="test2" style="background-color: #fff987">This is another paragraph!</p>
+    <p id="test2" style="background-color: #cf87ff">And yet, another paragraph!</p>
+
+    <button id="btn2">set css()</button>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn2").click(function() {
+        $("#test2*").css("background-color", "yellow");
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn2").click(function() {
+          $("#test2*").css("background-color", "yellow");
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: css() multiple</h3>
+
+    <p>Use the css() method to set multiple CSS properties for all matched elements:</p>
+
+    <p id="test3" style="background-color: #80f3f7">This is a paragraph!</p>
+    <p id="test3" style="background-color: #8099f7">This is another paragraph!</p>
+    <p id="test3" style="background-color: #7ef798">And yet, another paragraph!</p>
+
+    <button id="btn3">set css()</button>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn3").click(function() {
+        $("#test3*").css({
+          "background-color":"lime", "font-size":"22px", "border": "2px solid black"});
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn3").click(function() {
+          $("#test3*").css({
+            "background-color":"lime", "font-size":"22px", "border": "2px solid black"});
+        });
+      });
+    </code></pre>
+
+  </body>
+</html>

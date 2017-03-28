@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Set Content and Attributes</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- styles.css -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- w3.css -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+
+    <!-- prism.js -->
+    <link rel="stylesheet" href="prism.css" />
+    <script src="scripts/prism.js"></script>
+
+    <!-- link to jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  </head>
+
+  <body class="w3-margin">
+
+    <h1>Set Content and Attributes</h1>
+
+    <p>Three simple methods for DOM manipulation are:</p>
+
+    <ul>
+      <li>text() - sets or returns the text content of selected elements</li>
+      <li>html() - sets or returns the content of selected elements (including HTML markup)</li>
+      <li>val() - sets or returns the value of form fields</li>
+      <li>attr() - sets or returns the attribute value of an element</li>
+    </ul>
+
+    <hr />
+
+    <h3>Example: set content using text(), html(), and val()</h3>
+
+    <p id="test1">This is a paragraph!</p>
+    <p id="test2">This is another paragraph!</p>
+    <p><input type="text" id="test3" value="Daffy Duck" /></p>
+
+    <button id="btn1">Set Text</button>
+    <button id="btn2">Set HTML</button>
+    <button id="btn3">Set VALUE</button>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn1").click(function() {
+        $("#test1").text("Hello There!");
+      });
+      $("#btn2").click(function() {
+        $("#test2").html("<b>Hey There... AGAIN!</b>");
+      });
+      $("#btn3").click(function() {
+        $("#test3").val("Ronald McDonald");
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn1").click(function() {
+          $("#test1").text("Hello There!");
+        });
+        $("#btn2").click(function() {
+          $("#test2").html("<b>Hey There... AGAIN!</b>");
+        });
+        $("#btn3").click(function() {
+          $("#test3").val("Ronald McDonald");
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: set content with callback function</h3>
+
+    <p id="test4">This is a paragraph!</p>
+    <p id="test5">This is <b>another</b> paragraph!</p>
+
+    <button id="btn4">Show Old/New Text</button>
+    <button id="btn5">Show Old/New HTML</button>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn4").click(function() {
+        $("#test4").text(function(i, origText) {
+          return "Old text: " + origText + " New text: Hello There!(index: " + i + ")";
+        });
+      });
+
+      $("#btn5").click(function() {
+        $("#test5").html(function(i, origText) {
+          return "Old html: " + origText + " New html: Hello <b>again</b> (index: " + i + ")";
+        });
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn4").click(function() {
+          $("#test4").text(function(i, origText) {
+            return "Old text: " + origText + " New text: Hello There!(index: " + i + ")";
+          });
+        });
+
+        $("#btn5").click(function() {
+          $("#test5").html(function(i, origText) {
+            return "Old html: " + origText + " New html: Hello <b>again</b> (index: " + i + ")";
+          });
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: set attribute value with attr()</h3>
+
+    <p>Mouse over link after clicking the button to see that the href has changed:</p>
+
+    <p><a href="http://www.bing.com" id="test6">Bing.com</a></p>
+
+    <button id="btn6">Set href</button>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn6").click(function() {
+        $("#test6").attr("href", "http://www.google.com");
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn6").click(function() {
+          $("#test6").attr("href", "http://www.google.com");
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: set multiple attribute values with attr()</h3>
+
+    <p>Mouse over the link after clicking the button to see that the href and title have been changed:</p>
+
+    <p><a href="http://www.bing.com" title="View Bing.com" id="test7">Bing.com</a></p>
+
+    <button id="btn7">Set href/title</button>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn7").click(function() {
+        $("#test7").attr({
+          "href" : "http://www.google.com",
+          "title" : "View Google.com"
+        });
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn7").click(function() {
+          $("#test7").attr({
+            "href" : "http://www.google.com",
+            "title" : "View Google.com"
+          });
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: set attribute value with callback function</h3>
+
+    <p>Mouse over the link after clicking the button to see that the value of the href has been changed:</p>
+
+    <p><a href="http://www.bing.com" id="test8">Bing.com</a></p>
+
+    <button id="btn8">Set href</button>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn8").click(function() {
+        $("#test8").attr("href", function(i, origValue) {
+          return origValue + "/images";
+        });
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn8").click(function() {
+          $("#test8").attr("href", function(i, origValue) {
+            return origValue + "/images";
+          });
+        });
+      });
+    </code></pre>
+
+  </body>
+</html>

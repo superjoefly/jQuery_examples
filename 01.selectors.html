@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Selectors</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- styles.css -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- w3.css -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+
+    <!-- prism.js -->
+    <link rel="stylesheet" href="prism.css" />
+    <script src="scripts/prism.js"></script>
+
+    <!-- link to jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  </head>
+  <body class="w3-margin">
+
+    <h1>Selectors</h1>
+
+    <p>jQuery selectors allow you to select and manipulate HTML elements.</p>
+
+    <p>jQuery selectors are used to "find" (or select) HTML elements based on their name, id, classes, types, attributes, values of attributes and much more. They are based on the existing CSS Selectors, and in addition, has some of its own custom selectors. All jQuery selectors start with a $ sign and parenthesis.</p>
+
+    <h3>Example: hide() using element</h3>
+
+    <p>Hide all div using element:</p>
+
+    <button id="btn1">Hide Divs</button>
+
+    <div>This is a div-element.</div>
+    <div>This is another div-element.</div>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn1").click(function() {
+        $("div").hide();
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn1").click(function() {
+          $("div").hide();
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: hide() using element's id</h3>
+
+    <p>Hide all p-elements using element's id</p>
+
+    <button id="btn2">Hide Paragraphs</button>
+
+    <p id="p1">This is a paragraph</p>
+    <p id="p2">This is another paragraph.</p>
+
+    <script>
+      $(document).ready(function(){
+        $("#btn2").click(function() {
+          $("#p1, #p2").hide();
+        });
+      });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn2").click(function() {
+          $("#p1, #p2").hide();
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: hide() using element's class</h3>
+
+    <p>Hide the divs using element's class:</p>
+
+    <button id="btn3">Hide Divs</button>
+
+    <div class="test1">This is a div.</div>
+    <div class="test2">This is another div.</div>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn3").click(function() {
+        $(".test1, .test2").hide();
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn3").click(function() {
+          $(".test1, .test2").hide();
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: hide() the current element (the button) using "this":</h3>
+
+    <p>Hide the button using "this":</p>
+
+    <button id="btn4">Hide Button</button>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn4").click(function() {
+        $(this).hide();
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn4").click(function() {
+          $(this).hide();
+        });
+      });
+    </code></pre>
+
+  </body>
+</html>

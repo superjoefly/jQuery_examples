@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Get and Set CSS Classes</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- styles.css -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- w3.css -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+
+    <!-- prism.js -->
+    <link rel="stylesheet" href="prism.css" />
+    <script src="scripts/prism.js"></script>
+
+    <!-- link to jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <style>
+    .blue {
+      background-color: blue;
+    }
+
+    .yellow {
+      color: yellow;
+    }
+
+    .green {
+      color: green;
+    }
+
+    .big {
+      font-size: 20px;
+    }
+    </style>
+
+  </head>
+
+  <body class="w3-margin">
+
+    <h1>Get and Set CSS Classes</h1>
+
+    <p>The following methods can be used to manipulate CSS classes:</p>
+
+    <ul>
+      <li>addClass() - adds one or more classes to the selected elements</li>
+      <li>removeClass() - removes one or more classes from the selected elements</li>
+      <li>toggleClass() - toggles between adding and removing classes from the selected elements</li>
+      <li>css() - sets or returns the style attribute</li>
+    </ul>
+
+    <hr />
+
+    <h3>Example: addClass()</h3>
+
+    <p>Use the addClass() method to add classes to the selected elements:</p>
+
+    <button id="btn1">addClass()</button>
+
+    <br /><br />
+
+    <div id="div1" style="border: 1px solid black; height: 100px;
+    width: 300px;">
+    <p id="test">This is a paragraph inside a div!</p>
+    <p id="test2">This is a paragraph inside a div!</p>
+    </div>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn1").click(function() {
+        $("#div1").addClass("blue");
+        $("#test").addClass("yellow");
+        $("#test2").addClass("big");
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn1").click(function() {
+          $("#div1").addClass("blue");
+          $("#test").addClass("yellow");
+          $("#test2").addClass("big");
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: addClass() multiple classes</h3>
+
+    <p>Use the addClass() method with parameters to add multiple classes to the selected element:</p>
+
+    <button id="btn2">addClass()</button>
+
+    <br /><br />
+
+    <div id="div2" style="border: 1px solid black; height: 100px; width: 300px;">
+      This is some text inside a div!
+    </div>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn2").click(function() {
+        $("#div2").addClass("big green");
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn2").click(function() {
+          $("#div2").addClass("big green");
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: removeClass()</h3>
+
+    <p>Use the removeClass() method to remove classes from the selected elements:</p>
+
+    <button id="btn3">removeClass()</button>
+
+    <br /><br />
+
+    <div id="div3" class="blue" style="height: 100px; width: 300px; border: 1px solid black;">
+      <p id="test3" class="yellow">This is a paragraph inside a div!</p>
+    </div>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn3").click(function() {
+        $("#div3").removeClass("blue");
+        $("#test3").removeClass("yellow");
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn3").click(function() {
+          $("#div3").removeClass("blue");
+          $("#test3").removeClass("yellow");
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: toggleClass()</h3>
+
+    <p>Use the toggleClass() method to toggle the class of the selected element:</p>
+
+    <button id="btn4">toggleClass()</button>
+
+    <br /><br />
+
+    <div id="div4" style="border: 1px solid black; height: 100px; width: 300px;">
+      <p id="test4">This is a paragraph inside a div!</p>
+    </div>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn4").click(function() {
+        $("#div4").toggleClass("blue");
+        $("#test4").toggleClass("yellow big");
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn4").click(function() {
+          $("#div4").toggleClass("blue");
+          $("#test4").toggleClass("yellow big");
+        });
+      });
+    </code></pre>
+
+  </body>
+</html>

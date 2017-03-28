@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Traversing Filtering</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- styles.css -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- w3.css -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+
+    <!-- prism.js -->
+    <link rel="stylesheet" href="prism.css" />
+    <script src="scripts/prism.js"></script>
+
+    <!-- link to jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  </head>
+
+  <body class="w3-margin">
+
+    <h1>Traversing Filtering</h1>
+
+    <p>The following 3 methods allow you to select a specific element based on its position in a group of elements:</p>
+
+    <ul>
+      <li>first() - returns the first element of the selected elements</li>
+      <li>last() - returns the last element of the selected elements</li>
+      <li>eq() - returns an element with a specific index</li>
+    </ul>
+
+    <hr />
+
+    <h3>Example: first()</h3>
+
+    <p>Target the first element of the selected elements using the first() method:</p>
+
+    <ul id="list1">
+      <li>First list item</li>
+      <li>Second list item</li>
+      <li>Third list item</li>
+      <li>Last list item</li>
+    </ul>
+
+    <script>
+    $(document).ready(function(){
+      $("#list1 li").first().css("background-color", "yellow");
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#list1 li").first().css("background-color", "yellow");
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: last()</h3>
+
+    <p>Target the last element of the selected elements using the last() method:</p>
+
+    <ul id="list2">
+      <li>First list item</li>
+      <li>Second list item</li>
+      <li>Third list item</li>
+      <li>Last list item</li>
+    </ul>
+
+    <script>
+    $(document).ready(function(){
+    $("#list2 li").last().css("background-color", "lime");
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+      $("#list2 li").last().css("background-color", "lime");
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: eq()</h3>
+
+    <p>Target the element using a specified index number with the eq() method:</p>
+
+    <ul id="list3">
+      <li>First list item</li>
+      <li>Second list item (has index of 1)</li>
+      <li>Third list item</li>
+      <li>Last list item</li>
+    </ul>
+
+    <script>
+    $(document).ready(function(){
+    $("#list3 li").eq(1).css("background-color", "red");
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+      $("#list3 li").eq(1).css("background-color", "red");
+      });
+    </code></pre>
+
+    <hr />
+
+    <p>The following 2 filtering methods allow you to select elements that match, or do not match, a certain criteria:</p>
+
+    <ul>
+      <li>filter() - lets you specify a criteria; elements that do not match the criteria are removed from the selection; thos that do match are returned</li>
+      <li>not() - returns all elements that do NOT match the criteria; this is the opposite of the filter() method</li>
+    </ul>
+
+    <hr />
+
+    <h3>Example: filter()</h3>
+
+    <p>Target the elements that fit a specific crieteria using the filter() method:</p>
+
+    <ul id="list4">
+      <li>First list item</li>
+      <li class="demo">Second list item</li>
+      <li class="demo">Third list item</li>
+      <li>Last list item</li>
+    </ul>
+
+    <script>
+    $(document).ready(function(){
+      $("#list4 li").filter(".demo").css("background-color", "purple");
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#list4 li").filter(".demo").css("background-color", "purple");
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: not()</h3>
+
+    <p>Target the elements that do NOT fit the specified criteria usint the not() method:</p>
+
+    <ul id="list5">
+      <li>First list item</li>
+      <li class="demo2">Second list item</li>
+      <li class="demo2">Third list item</li>
+      <li>Last list item</li>
+    </ul>
+
+    <script>
+    $(document).ready(function(){
+      $("#list5 li").not(".demo2").css("background-color", "orange");
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#list5 li").not(".demo2").css("background-color", "orange");
+      });
+    </code></pre>
+
+  </body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Get Content and Attributes</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- styles.css -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- w3.css -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+
+    <!-- prism.js -->
+    <link rel="stylesheet" href="prism.css" />
+    <script src="scripts/prism.js"></script>
+
+    <!-- link to jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  </head>
+
+  <body class="w3-margin">
+
+    <h1>Get Content and Attributes</h1>
+
+    <p>Three simple methods for DOM manipulation are:</p>
+
+    <ul>
+      <li>text() - sets or returns the text content of selected elements</li>
+      <li>html() - sets or returns the content of selected elements (including HTML markup)</li>
+      <li>val() - sets or returns the value of form fields</li>
+      <li>attr() - sets or returns the attribute value of an element</li>
+    </ul>
+
+    <h3>Example: text() - get text</h3>
+
+    <p id="test1">This is some content in a paragraph!</p>
+
+    <button id="btn1">Get Text</button>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn1").click(function() {
+        alert("Text: " + $("#test1").text());
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn1").click(function() {
+          alert("Text: " + $("#test1").text());
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: html() - get HTML</h3>
+
+    <p id="test2">This is some <i>italic</i> text in a paragraph.</p>
+
+    <button id="btn2">Get HTML</button>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn2").click(function() {
+        alert("HTML: " + $("#test2").html());
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn2").click(function() {
+          alert("HTML: " + $("#test2").html());
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: val() - get value</h3>
+
+    <form>
+      Name: <input type="text" id="test3" value="Donald Duck" />
+    </form>
+    <br />
+    <button id="btn3">Get Value</button>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn3").click(function() {
+        alert("Value: " + $("#test3").val());
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn3").click(function() {
+          alert("Value: " + $("#test3").val());
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: attr() - get attribute</h3>
+
+    <a href="http://www.bing.com" id="bing">Bing.com</a>
+    <br /><br />
+    <button id="btn4">Get Attribute</button>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn4").click(function() {
+        alert("href: " + $("#bing").attr("href"));
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn4").click(function() {
+          alert("href: " + $("#bing").attr("href"));
+        });
+      });
+    </code></pre>
+
+  </body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ajax get() and post() Methods</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- styles.css -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- w3.css -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+
+    <!-- prism.js -->
+    <link rel="stylesheet" href="prism.css" />
+    <script src="scripts/prism.js"></script>
+
+    <!-- link to jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  </head>
+
+  <body class="w3-margin">
+
+    <h1>AJAX get() and post() Methods</h1>
+
+    <p>The jQuery get() and post() methods are used to request data from the server with an HTTP GET or POST request.</p>
+
+    <ul>
+      <li><strong>GET:</strong> request data from a sepcified resource</li>
+      <li><strong>POST:</strong> submits data to be processed to a specified resourece</li>
+    </ul>
+
+    <p>GET is used for just retrieving data from the server; the GET method may return cached data.</p>
+
+    <p>POST can also be used to retrieve data from the server, however, the POST method NEVER CACHES DATA, and is often used to send data along with the request.</p>
+
+    <hr />
+
+    <h3>Example: $.get()</h3>
+
+    <p>Use the $.get() method to retrieve data from a php file on the server and display it in an alert:</p>
+
+    <button id="btn1">Send GET Request</button>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn1").click(function() {
+        $.get("demo_test.php", function(data, status) {
+          alert("Data: " + data + "\nStatus: " + status);
+        });
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn1").click(function() {
+          $.get("demo_test.php", function(data, status) {
+            alert("Data: " + data + "\nStatus: " + status);
+          });
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: $.post()</h3>
+
+    <p>Use the $.post() method to retrieve data from a asp file on the server and display it in an alert:</p>
+
+    <button id="btn2">Set POST Request</button>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn2").click(function() {
+        $.post("demo_test_post.php", {
+          name: "Daffy Duck",
+          city: "Duckville"
+        },
+      function(data, status) {
+        alert("Data: " + data + "\nStatus: " + status);
+      });
+    });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn2").click(function() {
+          $.post("demo_test_post.php", {
+            name: "Daffy Duck",
+            city: "Duckville"
+          },
+        function(data, status) {
+          alert("Data: " + data + "\nStatus: " + status);
+        });
+      });
+      });
+    </code></pre>
+
+  </body>
+</html>

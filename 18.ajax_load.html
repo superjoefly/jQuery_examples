@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AJAX load() Method</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- styles.css -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- w3.css -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+
+    <!-- prism.js -->
+    <link rel="stylesheet" href="prism.css" />
+    <script src="scripts/prism.js"></script>
+
+    <!-- link to jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  </head>
+
+  <body class="w3-margin">
+
+    <h1>AJAX load() Method</h1>
+
+    <p>The load() method loads data from a server and puts the returned data into the selected element.</p>
+
+    <p>The required URL parameter specifies the URL you wish to load.</p>
+
+    <p>The optional data parameter specifies a set of querystring key/value pairs to send along with the request.</p>
+
+    <p>The optional callback parameter is the name of a function to be executed after the load() method is completed.</p>
+
+    <p><strong>Here is the content of the demo_test.txt file:</strong></p>
+
+    <pre><code>
+      &lth2>jQuery and AJAX is FUN!!!&lt/h2>
+      &ltp id="p1">This is some text in a paragraph.&lt/p>
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: jQuery load()</h3>
+
+    <p>Load the content of the demo_test.txt file into a specific div-element:</p>
+
+    <button id="btn1">Get Content</button>
+
+    <div id="demo1">
+      <p>Use jQuery AJAX to change this text!</p>
+    </div>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn1").click(function() {
+        $("#demo1").load("demo_test.txt");
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn1").click(function() {
+          $("#demo1").load("demo_test.txt");
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example:jQuery load()</h3>
+
+    <p>Load the content of a specific element inside the demo_test.txt file into a div-element:</p>
+
+    <button id="btn2">Get Content</button>
+
+    <div id="demo2">
+      <p>Use jQuery AJAX to change this text!</p>
+    </div>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn2").click(function() {
+        $("#demo2").load("demo_test.txt #p1");
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn2").click(function() {
+          $("#demo2").load("demo_test.txt #p1");
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: load() with callback</h3>
+
+    <p>Use the load() method with a callback function:</p>
+
+    <button id="btn3">Get Content</button>
+
+    <div id="demo3">
+      <p>Use jQuery AJAX to change this text!</p>
+    </div>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn3").click(function() {
+        $("#demo3").load("demo_test.txt", function(responseTxt, statusTxt, xhr) {
+          if(statusTxt == "success")
+          alert("External content successfully loaded!");
+          if(statusTxt == "error")
+          alert("Error: " + xhr.status + ": " + xhr.status.Text);
+        });
+      });s
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn3").click(function() {
+          $("#demo3").load("demo_test.txt", function(responseTxt, statusTxt, xhr) {
+            if(statusTxt == "success")
+            alert("External content successfully loaded!");
+            if(statusTxt == "error")
+            alert("Error: " + xhr.status + ": " + xhr.status.Text);
+          });
+        });s
+      });
+    </code></pre>
+
+  </body>
+</html>

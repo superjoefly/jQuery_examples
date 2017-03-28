@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Remove Content</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- styles.css -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- w3.css -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+
+    <!-- prism.js -->
+    <link rel="stylesheet" href="prism.css" />
+    <script src="scripts/prism.js"></script>
+
+    <!-- link to jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  </head>
+
+  <body class="w3-margin">
+
+    <h1>Remove Content</h1>
+
+    <p>There are two main jQuery methods for removing content:</p>
+
+    <ul>
+      <li>remove() - removes the selected element and its child element</li>
+      <li>empty() - removes the child elements from the selected element</li>
+    </ul>
+
+    <hr />
+
+    <h3>Example: remove()</h3>
+
+    <p>Use the remove() method to remove the element and its child element:</p>
+
+    <button id="btn1">remove()</button>
+
+    <div id="div1" style="background-color: lime; height: 100px; width: 300px;">
+      <p>This is a paragraph in a div!</p>
+      <p>This is a paragraph in a div!</p>
+      <p>This is a paragraph in a div!</p>
+    </div>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn1").click(function() {
+        $("#div1").remove();
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn1").click(function() {
+          $("#div1").remove();
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: empty()</h3>
+
+    <p>Use the empty() method to remove the children of the selected element:</p>
+
+    <button id="btn2">empty()</button>
+
+    <div id="div2" style="background-color: yellow; height: 100px; width: 300px;">
+      <p>This is a paragraph in a div!</p>
+      <p>This is a paragraph in a div!</p>
+      <p>This is a paragraph in a div!</p>
+    </div>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn2").click(function() {
+        $("#div2").empty();
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn2").click(function() {
+          $("#div2").empty();
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: remove() with parameter</h3>
+
+    <p>Use remove() with a parameter to filter which child elements to remove:</p>
+
+    <button id="btn3">remove()</button>
+
+    <div id="div3" style="background-color: orange; height=100px; width: 300px">
+      <p class="test">This is a paragraph in a div!</p>
+      <p class="test">This is a paragraph in a div!</p>
+      <p>This is a paragraph in a div!</p>
+    </div>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn3").click(function() {
+        $("p").remove(".test");
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn3").click(function() {
+          $("p").remove(".test");
+        });
+      });
+    </code></pre>
+
+  </body>
+</html>

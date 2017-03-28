@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Animate</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- styles.css -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- w3.css -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+
+    <!-- prism.js -->
+    <link rel="stylesheet" href="prism.css" />
+    <script src="scripts/prism.js"></script>
+
+    <!-- link to jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <style>
+      div {
+        margin: 10px;
+      }
+
+      #div7, #panel7 {
+        border: 1px solid grey;
+        background-color: lightgrey;
+        padding: 5px;
+        text-align: center;
+      }
+
+      #panel7 {
+        background-color: pink;
+        padding: 50px;
+        display: none;
+      }
+    </style>
+
+  </head>
+
+  <body class="w3-margin">
+
+    <h1>Animate</h1>
+
+    <p>The animate() method enables custom animations.</p>
+
+    <p>The required params parameter defines the CSS properties to be animated.</p>
+
+    <p>The optional speed parameter specifies the duration of the effect. It can take the following values: "slow", "fast", or milliseconds.</p>
+
+    <p>The optional callback parameter is a function to be executed after the animation has completed.</p>
+
+    <hr />
+
+    <h3>Example: animate()</h3>
+
+    <button id="btn1">animate()</button>
+
+    <div id="div1" style="background-color: blue; height: 100px; width: 100px; position: relative;"></div>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn1").click(function() {
+        $("#div1").animate({
+          left: '200px'
+        });
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn1").click(function() {
+          $("#div1").animate({
+            left: '200px'
+          });
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: animate() multiple properties</h3>
+
+    <button id="btn2">animate()</button>
+
+    <div id="div2" style="background-color: red; height: 100px; width: 100px; position: relative;"></div>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn2").click(function() {
+        $("#div2").animate({
+          left: '200px',
+          width: '200px',
+          opacity: '0.5'
+        });
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn2").click(function() {
+          $("#div2").animate({
+            left: '200px',
+            width: '200px',
+            opacity: '0.5'
+          });
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: animate() relative values</h3>
+
+    <button id="btn3">animate()</button>
+
+    <div id="div3" style="background-color: orange; height: 100px; width: 100px; position: relative;"></div>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn3").click(function() {
+        $("#div3").animate({
+          left: '200px',
+          width: '+=100px',
+          opacity: '-=0.3'
+        });
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn3").click(function() {
+          $("#div3").animate({
+            left: '200px',
+            width: '+=100px',
+            opacity: '-=0.3'
+          });
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: animate() + toggle</h3>
+
+    <button id="btn4">animate()</button>
+
+    <div id="div4" style="background-color: green; height: 100px; width: 100px; position: relative;"></div>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn4").click(function() {
+        $("#div4").animate({
+          height: 'toggle'
+        });
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn4").click(function() {
+          $("#div4").animate({
+            height: 'toggle'
+          });
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: animate() chained</h3>
+
+    <button id="btn5">animate()</button>
+
+    <div id="div5" style="background-color: purple; height: 100px; width: 100px; position: relative;"></div>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn5").click(function() {
+        var div = $("#div5");
+        div.animate({
+          left: '200px'
+        }, 'slow');
+        div.animate({
+          width: '300px'
+        }, 'slow');
+        div.animate({
+          opacity: '-=0.5'
+        }, 'slow');
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn5").click(function() {
+          var div = $("#div5");
+          div.animate({
+            left: '200px'
+          }, 'slow');
+          div.animate({
+            width: '300px'
+          }, 'slow');
+          div.animate({
+            opacity: '-=0.5'
+          }, 'slow');
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: animate() chained # 2</h3>
+
+    <button id="btn6">animate()</button>
+
+    <div id="div6" style="background-color: yellow; height: 100px; width: 100px; position: relative;">ANIMATE!</div>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn6").click(function() {
+        var div = $("#div6");
+        div.animate({
+          left: '200px'
+        }, 'slow');
+        div.animate({
+          width: '300px'
+        }, 'slow');
+        div.animate({
+          height: '200px'
+        }, "slow");
+        div.animate({
+          fontSize: '30px',
+          padding: '75px'
+        }, "slow");
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn6").click(function() {
+          var div = $("#div6");
+          div.animate({
+            left: '200px'
+          }, 'slow');
+          div.animate({
+            width: '300px'
+          }, 'slow');
+          div.animate({
+            height: '200px'
+          }, "slow");
+          div.animate({
+            fontSize: '30px',
+            padding: '75px'
+          }, "slow");
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h2>Stop Animations</h2>
+
+    <p>The stop() method is used to stop animations and effects before they are finished.</p>
+
+    <p>The stop() method works for all jQuery effect functions, including sliding, fading, and custom animations.</p>
+
+    <p>The optional stopAll parameter specifies whether or not to clear the animation queue. Default is false, which means that only the active animation will be stopped, allowing any queued animations to be performed afterwards.</p>
+
+    <p>The optional goToEnd parameter specifies whether or not to complete the current animation immediately. Default is false.</p>
+
+    <p>By default, the stop() method stops the current animation being performed on the selected element.</p>
+
+    <h3>Example: stop()</h3>
+
+    <button id="stop">Stop Animation</button>
+
+    <div id="div7">Slide Down Panel</div>
+
+    <div id="panel7">Hello There!</div>
+
+    <script>
+    $(document).ready(function(){
+      $("#div7").click(function() {
+        $("#panel7").slideDown(5000);
+      });
+      $("#stop").click(function() {
+        $("#panel7").stop();
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#div7").click(function() {
+          $("#panel7").slideDown(5000);
+        });
+        $("#stop").click(function() {
+          $("#panel7").stop();
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: stop() with parameters</h3>
+
+    <p>The "Start" button starts the animation.</p>
+    <p>The "Stop" button stops the current active animation, but allows the queued animations to be performed afterwards.</p>
+    <p>The "Stop all" button stops the current active animation and clears the animation queue; so all animations on the element are stopped.</p>
+    <p>The "Stop but finish" button rushes through the current active animation, then it stops.</p>
+
+    <button id="start">Start</button>
+    <button id="stop1">Stop</button>
+    <button id="stop2">Stop All</button>
+    <button id="stop3">Stop but Finish</button>
+
+    <div id="div8" style="background-color: lime; height: 100px; width: 100px; position: relative;">Hello There!</div>
+
+    <script>
+    $(document).ready(function(){
+      $("#start").click(function() {
+        $("#div8").animate({
+          left: '200px'
+        }, 5000);
+        $("#div8").animate({
+          fontSize: '30px'
+        }, 5000);
+      });
+
+      $("#stop1").click(function() {
+        $("#div8").stop();
+      });
+      $("#stop2").click(function() {
+        $("#div8").stop(true);
+      });
+      $("#stop3").click(function() {
+        $("#div8").stop(true, true);
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#start").click(function() {
+          $("#div8").animate({
+            left: '200px'
+          }, 5000);
+          $("#div8").animate({
+            fontSize: '30px'
+          }, 5000);
+        });
+
+        $("#stop1").click(function() {
+          $("#div8").stop();
+        });
+        $("#stop2").click(function() {
+          $("#div8").stop(true);
+        });
+        $("#stop3").click(function() {
+          $("#div8").stop(true, true);
+        });
+      });
+    </code></pre>
+
+  </body>
+</html>

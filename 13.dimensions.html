@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dimensions</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- styles.css -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- w3.css -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+
+    <!-- prism.js -->
+    <link rel="stylesheet" href="prism.css" />
+    <script src="scripts/prism.js"></script>
+
+    <!-- link to jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <style>
+    div {
+      box-sizing: content-box;
+    }
+    </style>
+
+  </head>
+
+  <body class="w3-margin">
+
+    <h1>Dimensions</h1>
+
+    <p>jQuery has the following methods for working with dimensions:</p>
+
+    <ul>
+      <li>width() - sets or returns the width of an element (excluding padding, border and margin)</li>
+      <li>height() - sets or returns the height of an element (excluding padding, border and margin)</li>
+      <li>innerWidth() - returns the width of an element (including padding)</li>
+      <li>innerHeight() - returns the height of an element (including padding)</li>
+      <li>outerWidth() - returns the width of an element (including padding and border)</li>
+      <li>outerHeight() - returns the height of an element (including padding and border)</li>
+      <li>outerWidth(true) - returns the width of an element (including padding, border and margin)</li>
+      <li>outerHeight(true) - returns the height of an element (including padding, border and margin)</li>
+    </ul>
+
+    <hr />
+
+    <h3>Example: width() and height()</h3>
+
+    <p>Return the width and height of an element (excludes padding, border and margin):</p>
+
+    <div id="div1" style="background-color: lime; height: 100px; width: 300px;"></div>
+
+    <br />
+
+    <button id="btn1">width() and height()</button>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn1").click(function() {
+        var txt = "";
+        txt += "Width: " + $("#div1").width() + "<br />";
+        txt += "Height: " + $("#div1").height();
+        $("#div1").html(txt);
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn1").click(function() {
+          var txt = "";
+          txt += "Width: " + $("#div1").width() + "<br />";
+          txt += "Height: " + $("#div1").height();
+          $("#div1").html(txt);
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: innerWidth() and innerHeight()</h3>
+
+    <p>Return the inner width and inner height of an element (includes padding):</p>
+
+    <div id="div2" style="background-color: yellow; height: 100px; width: 300px; padding: 10px;"></div>
+
+    <br />
+
+    <button id="btn2">width() and height()</button>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn2").click(function() {
+        var txt = "";
+        txt += "Inner Width: " + $("#div2").innerWidth() + "<br />";
+        txt += "Inner Height: " + $("#div2").innerHeight();
+        $("#div2").html(txt);
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn2").click(function() {
+          var txt = "";
+          txt += "Inner Width: " + $("#div2").innerWidth() + "<br />";
+          txt += "Inner Height: " + $("#div2").innerHeight();
+          $("#div2").html(txt);
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: outerWidth() and outerHeight()</h3>
+
+    <p>Return the outer width and outer height of an element (includes padding and border):</p>
+
+    <div id="div3" style="background-color: skyblue; height: 100px; width: 300px; padding: 10px; border: 2px solid navy;"></div>
+
+    <br />
+
+    <button id="btn3">width() and height()</button>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn3").click(function() {
+        var txt = "";
+        txt += "Outer Width: " + $("#div3").outerWidth() + "<br />";
+        txt += "Outer Height: " + $("#div3").outerHeight();
+        $("#div3").html(txt);
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn3").click(function() {
+          var txt = "";
+          txt += "Outer Width: " + $("#div3").outerWidth() + "<br />";
+          txt += "Outer Height: " + $("#div3").outerHeight();
+          $("#div3").html(txt);
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: outerWidth(true) and outerHeight(true)</h3>
+
+    <p>Return the true outer width and the true outer height of an element (includes padding, border and margin):</p>
+
+    <div id="div4" style="background-color: #d58eff; height: 100px; width: 300px; padding: 10px; border: 2px solid navy; margin: 5px;"></div>
+
+    <br />
+
+    <button id="btn4">width() and height()</button>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn4").click(function() {
+        var txt = "";
+        txt += "True Outer Width: " + $("#div4").outerWidth(true) + "<br />";
+        txt += "True Outer Height: " + $("#div4").outerHeight(true);
+        $("#div4").html(txt);
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn4").click(function() {
+          var txt = "";
+          txt += "True Outer Width: " + $("#div4").outerWidth(true) + "<br />";
+          txt += "True Outer Height: " + $("#div4").outerHeight(true);
+          $("#div4").html(txt);
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: set width() and height()</h3>
+
+    <div id="div5" style="height: 100px; width: 300px; background-color: #ff6d8a"></div>
+
+    <br />
+
+    <button id="btn5">Set width()/height()</button>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn5").click(function() {
+        $("#div5").width(400).height(200);
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn5").click(function() {
+          $("#div5").width(400).height(200);
+        });
+      });
+    </code></pre>
+
+  </body>
+</html>

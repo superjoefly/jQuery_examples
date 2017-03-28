@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Content</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- styles.css -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- w3.css -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+
+    <!-- prism.js -->
+    <link rel="stylesheet" href="prism.css" />
+    <script src="scripts/prism.js"></script>
+
+    <!-- link to jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  </head>
+
+  <body class="w3-margin">
+
+    <h1>Add Content</h1>
+
+    <p>Following are four jQuery methods that can be used to add new content:</p>
+
+    <ul>
+      <li>append() - inserts content at the end of the selected element(s)</li>
+      <li>prepend() - inserts content at the beginning of the selected element(s)</li>
+      <li>after() - inserts content after the selected element(s)</li>
+      <li>before() - inserts content before the selected element(s)</li>
+    </ul>
+
+    <hr />
+
+    <h3>Example: append()</h3>
+
+    <p>Insert content at the end of the selected element(s):</p>
+
+    <ol id="list1">
+      <li>List Item 1</li>
+      <li>List Item 2</li>
+      <li>List Item 3</li>
+    </ol>
+
+    <button id="btn1">Append</button>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn1").click(function() {
+        $("#list1").append("<li><b>New List Item!</b></li>");
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn1").click(function() {
+          $("#list1").append("<li><b>New List Item!</b></li>");
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: prepend()</h3>
+
+    <p>Insert content at the beginning of the selected element(s):</p>
+
+    <ol id="list2">
+      <li>List Item 1</li>
+      <li>List Item 2</li>
+      <li>List Item 3</li>
+    </ol>
+
+    <button id="btn2">Prepend</button>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn2").click(function() {
+        $("#list2").prepend("<li><b>New List Item!</b></li>");
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn2").click(function() {
+          $("#list2").prepend("<li><b>New List Item!</b></li>");
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: before() and after()</h3>
+
+    <p>Insert content before and after the selected element:</p>
+
+    <p><img src="images/cute_bunny.jpg" alt="cute bunny" height="175" width="250" id="bunny"/></p>
+
+    <button id="btn3">Before</button>
+    <button id="btn4">After</button>
+
+    <script>
+    $(document).ready(function(){
+      $("#btn3").click(function() {
+        $("#bunny").before("<b>BEFORE!</b>");
+      });
+      $("#btn4").click(function() {
+        $("#bunny").after("<i>AFTER!</i>");
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#btn3").click(function() {
+          $("#bunny").before("<b>BEFORE!</b>");
+        });
+        $("#btn4").click(function() {
+          $("#bunny").after("<i>AFTER!</i>");
+        });
+      });
+    </code></pre>
+
+  </body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Traversing Descendants</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- styles.css -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- w3.css -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+
+    <!-- prism.js -->
+    <link rel="stylesheet" href="prism.css" />
+    <script src="scripts/prism.js"></script>
+
+    <!-- link to jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <style>
+    .descendants * {
+      display: block;
+      border: 2px solid lightgrey;
+      padding: 5px;
+      margin: 15px;
+    }
+    </style>
+
+  </head>
+
+  <body class="w3-margin">
+
+    <h1>Traversing Descendants</h1>
+
+    <p>With jQuery you can traverse down the DOM tree to find descendants of an element.</p>
+
+    <p>Two available methods for traversing down the DOM tree include:</p>
+
+    <ul>
+      <li>children() - The children method returns all direct children of the selected element. This method only traverses down the DOM tree a single level.</li>
+      <li>find() - This method returns descendant elements of the selected element, all the way down to the last descendant.</li>
+    </ul>
+
+    <hr />
+
+    <h3>Example: children()</h3>
+
+    <p>Target the direct-child of an element using the children() method: (children() orange)</p>
+
+    <div class="descendants">
+      <div style="width: 500px" id="parent">Parent Div
+        <div>Child
+          <div>Grand Child
+            <div>Great Grand Child</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+    $(document).ready(function(){
+      $("#parent").children().css({
+        "color": "orange", "border":"2px solid orange"
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#parent").children().css({
+          "color": "orange", "border":"2px solid orange"
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: find()</h3>
+
+    <p>Target all the descendants all the way to the last descendant using the find() method: (find("div") purple)</p>
+
+    <div class="descendants">
+      <div style="width: 500px" id="parent2">Parent Div
+        <div>Child
+          <div>Grand Child
+            <div>Great Grand Child</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+    $(document).ready(function(){
+      $("#parent2").find("div").css({
+        "color":"purple", "border":"2px solid purple"
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#parent2").find("div").css({
+          "color":"purple", "border":"2px solid purple"
+        });
+      });
+    </code></pre>
+
+  </body>
+</html>

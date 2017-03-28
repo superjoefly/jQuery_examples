@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Traversing Siblings</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- styles.css -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- w3.css -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+
+    <!-- prism.js -->
+    <link rel="stylesheet" href="prism.css" />
+    <script src="scripts/prism.js"></script>
+
+    <!-- link to jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <style>
+    .siblings * {
+      display: block;
+      border: 2px solid grey;
+      color: grey;
+      padding: 5px;
+      margin: 15px;
+    }
+    </style>
+
+  </head>
+
+  <body class="w3-margin">
+
+    <h1>Traversig Siblings</h1>
+
+    <p>With jQuery you can traverse sideways in the DOM tree to find siblings of an element.</p>
+
+    <p>The following methods are available for traversing sibling elements:</p>
+
+    <ul>
+      <li>siblings() - returns all sibling elements; you can also use a parameter to filter the search for siblings</li>
+      <li>next() - returns the next sibling element</li>
+      <li>nextAll() - returns ALL next sibling elements</li>
+      <li>nextUntil() - returns all next sibling elements between two given arguments</li>
+      <li>prev() - returns the previous sibling element</li>
+      <li>prevAll() - returns ALL previous sibling elements</li>
+      <li>prevUntil() - returns all previous sibling elements between two given arguments.</li>
+    </ul>
+
+    <div class="w3-panel w3-border-red w3-leftbar w3-white">
+    <p><strong>The prev(), prevAll() and prevUntil() methods work the same as the methods below, except with reverse functionality.</strong></p>
+    </div>
+
+    <hr />
+
+    <h3>Example: siblings()</h3>
+
+    <p>Target the siblings (red) of an element (first paragraph) using the siblings() method:</p>
+
+    <div class="siblings" style="width:500px;">
+      <div class="parent">Parent Div
+        <p id="test">paragraph</p>
+        <span>span</span>
+        <p>paragraph</p>
+        <span>span</span>
+      </div>
+    </div>
+
+    <script>
+    $(document).ready(function(){
+      $("#test").siblings().css({
+        "border":"2px solid red"
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#test").siblings().css({
+          "border":"2px solid red"
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: next()</h3>
+
+    <p>Target the next sibling (green) of the selected element (paragraph) using next():</p>
+
+    <div class="siblings" style="width:500px;">
+      <div class="parent">Parent Div
+        <p id="test2">paragraph</p>
+        <span>span</span>
+        <p>paragraph</p>
+        <span>span</span>
+      </div>
+    </div>
+
+    <script>
+    $(document).ready(function(){
+      $("#test2").next().css({
+        "border":"2px solid green"
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#test2").next().css({
+          "border":"2px solid green"
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: nextAll()</h3>
+
+    <p>Target ALL next siblings (purple) of the selected element (span) using the nextAll() method:</p>
+
+    <div class="siblings" style="width:500px;">
+      <div class="parent">Parent Div
+        <p>paragraph</p>
+        <span id="test3">span</span>
+        <p>paragraph</p>
+        <span>span</span>
+      </div>
+    </div>
+
+    <script>
+    $(document).ready(function(){
+      $("#test3").nextAll().css({
+        "border":"2px solid purple"
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#test3").nextAll().css({
+          "border":"2px solid purple"
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: nextUntil()</h3>
+
+    <p>Target all the next siblings (yellow) of a selected element between two given arguments using the nextUntil() method:</p>
+
+    <p><strong>Note:</strong> this will not include the second argument.</p>
+
+    <div class="siblings" style="width:500px;">
+      <div class="parent">Parent Div
+        <h3 id="test4">h3 heading</h3>
+        <h4>h4 heading</h4>
+        <h5>h5 heading</h5>
+        <h6>h6 heading</h6>
+      </div>
+    </div>
+
+    <script>
+    $(document).ready(function(){
+      $("#test4").nextUntil("h5").css({
+        "border":"2px solid yellow"
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#test4").nextUntil("h5").css({
+          "border":"2px solid yellow"
+        });
+      });
+    </code></pre>
+
+  </body>
+</html>

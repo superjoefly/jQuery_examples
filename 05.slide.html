@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Slide</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- styles.css -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- w3.css -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+
+    <!-- prism.js -->
+    <link rel="stylesheet" href="prism.css" />
+    <script src="scripts/prism.js"></script>
+
+    <!-- link to jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <style>
+
+    #div1, #panel1 {
+      padding: 5px;
+      text-align: center;
+      background-color: #939393;
+      border: 1px solid grey;
+    }
+
+    #panel1 {
+      padding: 50px;
+      display: none;
+      background-color: lightgrey;
+    }
+
+    #div2, #panel2 {
+      padding: 5px;
+      text-align: center;
+      background-color: #f49542;
+      border: 1px solid grey;
+    }
+
+    #panel2 {
+      padding: 50px;
+      background-color: #ffc38e;
+    }
+
+    #div3, #panel3 {
+      padding: 5px;
+      text-align: center;
+      background-color: green;
+      border: 1px solid grey;
+    }
+
+    #panel3 {
+      padding: 50px;
+      display: none;
+      background-color: #aaefab;
+    }
+    </style>
+
+  </head>
+
+  <body class="w3-margin">
+
+    <h1>Slide</h1>
+
+    <p>The jQuery slide() method slides elements up and down.</p>
+
+    <p>jQuery has the following slide() methods:</p>
+
+    <ul>
+      <li>slideDown()</li>
+      <li>slideUp()</li>
+      <li>slideToggle()</li>
+    </ul>
+
+    <h3>Example: slideDown()</h3>
+
+    <p>The slideDown() method is used to slide an element down:</p>
+
+      <div id="div1">Click to slide down the panel!</div>
+      <div id="panel1">Well, hello there!</div>
+
+    <script>
+    $(document).ready(function(){
+      $("#div1").click(function() {
+        $("#panel1").slideDown("slow");
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#div1").click(function() {
+          $("#panel1").slideDown("slow");
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: slideUp()</h3>
+
+    <p>The slideUp() method is used to slide up an element:</p>
+
+    <div id="div2">Click to slide up the panel!</div>
+    <div id="panel2">No!!!! Please Dont!!!</div>
+
+    <script>
+    $(document).ready(function(){
+      $("#div2").click(function() {
+        $("#panel2").slideUp("slow");
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#div2").click(function() {
+          $("#panel2").slideUp("slow");
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: slideToggle()</h3>
+
+    <p>The slideToggle() method can be used to toggle the slideDown and slideUp methods:</p>
+
+    <div id="div3">Click to toggle the visibility of the panel!</div>
+    <div id="panel3">Hi, again! / Bye, again!</div>
+
+    <script>
+    $(document).ready(function(){
+      $("#div3").click(function() {
+        $("#panel3").slideToggle("slow");
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#div3").click(function() {
+          $("#panel3").slideToggle("slow");
+        });
+      });
+    </code></pre>
+
+  </body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Events</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- styles.css -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- w3.css -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+
+    <!-- prism.js -->
+    <link rel="stylesheet" href="prism.css" />
+    <script src="scripts/prism.js"></script>
+
+    <!-- link to jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <style>
+    div {
+      color: blue;
+    }
+    </style>
+
+  </head>
+
+  <body class="w3-margin">
+
+    <h1>Events</h1>
+
+    <p>All the different actions that a webpage can respond to are called events. An event represents the precise moment when something happens. Examples of events include:</p>
+
+    <ul>
+      <li>moving a mouse over an element</li>
+      <li>selecting an input field</li>
+      <li>clicking on an element</li>
+    </ul>
+
+    <hr />
+
+    <h3>Example: click()</h3>
+
+    <p>Click on an element to make it disappear:</p>
+
+    <div id="div1">Click on me an I will disappear!</div>
+
+    <script>
+    $(document).ready(function(){
+      $("#div1").click(function() {
+        $(this).hide();
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#div1").click(function() {
+          $(this).hide();
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: dblclick()</h3>
+
+    <p>Double click an element to make it disappear:</p>
+
+    <div id="div2">Double click on me and I will disappear!</div>
+
+    <script>
+    $(document).ready(function(){
+      $("#div2").dblclick(function() {
+        $(this).hide();
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#div2").dblclick(function() {
+          $(this).hide();
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: mouseenter()</h3>
+
+    <p>Enter the element with the cursor to display a popup:</p>
+
+    <div id="div3">Enter the cursor into this element!</div>
+
+    <script>
+    $(document).ready(function(){
+      $("#div3").mouseenter(function() {
+        alert("You entered the element!");
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#div3").mouseenter(function() {
+          alert("You entered the element!");
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: mouseleave()</h3>
+
+    <p>Enter, and then leave the element to display a popup!</p>
+
+    <div id="div4">Enter and then leave this element to see the popup!</div>
+
+    <script>
+    $(document).ready(function(){
+      $("#div4").mouseleave(function() {
+        alert("You left the element!");
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#div4").mouseleave(function() {
+          alert("You left the element!");
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: mousedown()</h3>
+
+    <p>Disply an alert on mousedown (takes place before releasing the mouse button):</p>
+
+    <div id="div5">Click the mouse button down over me to display  a popup!</div>
+
+    <script>
+    $(document).ready(function(){
+      $("#div5").mousedown(function() {
+        alert("Mousedown over the element!");
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#div5").mousedown(function() {
+          alert("Mousedown over the element!");
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: mouseup()</h3>
+
+    <p>Display an alert on mouseup (takes place after releasing the mouse button):</p>
+
+    <div id="div6">Click and release the mouse button over me to display an alert!</div>
+
+    <script>
+    $(document).ready(function(){
+      $("#div6").mouseup(function() {
+        alert("Mouseup over the element!");
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#div6").mouseup(function() {
+          alert("Mouseup over the element!");
+        });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: hover() (mouseenter/mouseleave)</h3>
+
+    <p>Display an alert when hovering over, and after leaving, the element:</p>
+
+    <div id="div7">Hover over me to display an alert!</div>
+
+    <script>
+    $(document).ready(function(){
+      $("#div7").hover(function() {
+        alert("You hovered over the element!");
+      },
+    function() {
+      alert("You left the element!");
+    });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("#div7").hover(function() {
+          alert("You hovered over the element!");
+        },
+      function() {
+        alert("You left the element!");
+      });
+      });
+    </code></pre>
+
+    <hr />
+
+    <h3>Example: focus() and blur()</h3>
+
+    <p>Change the color while on focus (clicking into) and on blur (clicking out of) the input field:</p>
+
+    <form>
+      Name: <input type="text" name="fullname" /><br /><br />
+      Email: <input type="text" name="email" />
+    </form>
+
+    <script>
+    $(document).ready(function(){
+      $("input").focus(function() {
+        $(this).css("background-color", "red");
+      });
+      $("input").blur(function() {
+        $(this).css("background-color", "lime");
+      });
+    });
+    </script>
+
+    <pre><code class="language-javascript">
+      $(document).ready(function(){
+        $("input").focus(function() {
+          $(this).css("background-color", "red");
+        });
+        $("input").blur(function() {
+          $(this).css("background-color", "lime");
+        });
+      });
+    </code></pre>
+
+  </body>
+</html>

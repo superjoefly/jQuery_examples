@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fade</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- styles.css -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- w3.css -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+
+    <!-- prism.js -->
+    <link rel="stylesheet" href="prism.css" />
+    <script src="scripts/prism.js"></script>
+
+    <!-- link to jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <style>
+    div {
+      margin: 10px;
+      display: inline-block;
+    }
+
+    </style>
+
+  </head>
+
+  <body class="w3-margin">
+
+  <h1>Fade</h1>
+
+  <p>The fade() method can be used to fade an element in and out of visibility.</p>
+
+  <p>The optional speed parameter specifies the speed of the hiding and showing, and can take the following values: "slow", "fast", or milliseconds.</p>
+
+  <p>The optional callback parameter is a function to be executed after the hide or show completes.</p>
+
+  <p><strong>Note:</strong> the examples on this page use different speed parameters.</p>
+
+  <hr />
+
+  <h3>Example: fadeIn()</h3>
+
+  <p>Fade in the boxes using the fadeIn() method:</p>
+
+  <button id="btn1">fadeIn()</button>
+
+  <div id="div1" style="width: 75px; height: 75px; background-color: blue; display: none;"></div>
+  <div id="div2" style="width: 75px; height: 75px; background-color: red; display: none;"></div>
+  <div id="div3" style="width: 75px; height: 75px; background-color: yellow; display: none;"></div>
+
+  <script>
+  $(document).ready(function(){
+    $("#btn1").click(function() {
+      $("#div1").fadeIn();
+      $("#div2").fadeIn("slow");
+      $("#div3").fadeIn(3000);
+    });
+  });
+  </script>
+
+  <pre><code class="language-javascript">
+    $(document).ready(function(){
+      $("#btn1").click(function() {
+        $("#div1").fadeIn();
+        $("#div2").fadeIn("slow");
+        $("#div3").fadeIn(3000);
+      });
+    });
+  </code></pre>
+
+  <hr />
+
+  <h3>Example: fadeOut()</h3>
+
+  <p>Fade out the boxes using the fadeOut() method:</p>
+
+  <button id="btn2">fadeOut()</button>
+
+  <div id="div4" style="width: 75px; height: 75px; background-color: yellow;"></div>
+  <div id="div5" style="width: 75px; height: 75px; background-color: red;"></div>
+  <div id="div6" style="width: 75px; height: 75px; background-color: blue;"></div>
+
+  <script>
+  $(document).ready(function(){
+    $("#btn2").click(function() {
+      $("#div4").fadeOut();
+      $("#div5").fadeOut("slow");
+      $("#div6").fadeOut(3000);
+    });
+  });
+  </script>
+
+  <pre><code class="language-javascript">
+    $(document).ready(function(){
+      $("#btn2").click(function() {
+        $("#div4").fadeOut();
+        $("#div5").fadeOut("slow");
+        $("#div6").fadeOut(3000);
+      });
+    });
+  </code></pre>
+
+  <hr />
+
+  <h3>Example: fadeToggle()</h3>
+
+  <p>Click the button (multiple times) to fade the boxes in and out (toggle):</p>
+
+  <button id="btn3">fadeToggle()</button>
+
+  <div id="div7" style="width: 75px; height: 75px; background-color: blue;"></div>
+  <div id="div8" style="width: 75px; height: 75px; background-color: red;"></div>
+  <div id="div9" style="width: 75px; height: 75px; background-color: yellow;"></div>
+
+  <script>
+  $(document).ready(function(){
+    $("#btn3").click(function() {
+      $("#div7").fadeToggle();
+      $("#div8").fadeToggle("slow");
+      $("#div9").fadeToggle(3000);
+    });
+  });
+  </script>
+
+  <pre><code class="language-javascript">
+    $(document).ready(function(){
+      $("#btn3").click(function() {
+        $("#div7").fadeToggle();
+        $("#div8").fadeToggle("slow");
+        $("#div9").fadeToggle(3000);
+      });
+    });
+  </code></pre>
+
+  <hr />
+
+  <h3>Example: fadeTo()</h3>
+
+  <p>The fadeTo() method can be used to fade an element to a specified opacity:</p>
+
+  <button id="btn4">fadeTo()</button>
+
+  <div id="div10" style="width: 75px; height: 75px; background-color: yellow;"></div>
+  <div id="div11" style="width: 75px; height: 75px; background-color: red;"></div>
+  <div id="div12" style="width: 75px; height: 75px; background-color: blue;"></div>
+
+  <script>
+  $(document).ready(function(){
+    $("#btn4").click(function() {
+      $("#div10").fadeTo("slow", 0.15);
+      $("#div11").fadeTo("slow", 0.30);
+      $("#div12").fadeTo("slow", 0.60);
+    });
+  });
+  </script>
+
+  <pre><code class="language-javascript">
+    $(document).ready(function(){
+      $("#btn4").click(function() {
+        $("#div10").fadeTo("slow", 0.15);
+        $("#div11").fadeTo("slow", 0.30);
+        $("#div12").fadeTo("slow", 0.60);
+      });
+    });
+  </code></pre>
+
+  </body>
+</html>

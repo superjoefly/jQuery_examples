@@ -26,6 +26,16 @@
       padding: 5px;
       margin: 15px;
     }
+
+    .siblings {
+      width: 100%;
+    }
+
+    /*@media all and (min-width: 600px) {
+      .siblings {
+        width: 500px;
+      }
+    }*/
     </style>
 
   </head>
@@ -58,7 +68,7 @@
 
     <p>Target the siblings (red) of an element (first paragraph) using the siblings() method:</p>
 
-    <div class="siblings" style="width:500px;">
+    <div class="siblings">
       <div class="parent">Parent Div
         <p id="test">paragraph</p>
         <span>span</span>
@@ -89,7 +99,7 @@
 
     <p>Target the next sibling (green) of the selected element (paragraph) using next():</p>
 
-    <div class="siblings" style="width:500px;">
+    <div class="siblings">
       <div class="parent">Parent Div
         <p id="test2">paragraph</p>
         <span>span</span>
@@ -120,7 +130,7 @@
 
     <p>Target ALL next siblings (purple) of the selected element (span) using the nextAll() method:</p>
 
-    <div class="siblings" style="width:500px;">
+    <div class="siblings">
       <div class="parent">Parent Div
         <p>paragraph</p>
         <span id="test3">span</span>
@@ -153,7 +163,7 @@
 
     <p><strong>Note:</strong> this will not include the second argument.</p>
 
-    <div class="siblings" style="width:500px;">
+    <div class="siblings">
       <div class="parent">Parent Div
         <h3 id="test4">h3 heading</h3>
         <h4>h4 heading</h4>

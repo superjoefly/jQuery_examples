@@ -25,6 +25,16 @@
       padding: 5px;
       margin: 15px;
     }
+
+    .descendants {
+      width: 100%;
+    }
+
+    /*@media all and (min-width: 600px) {
+      .descendants {
+        width: 500px;
+      }
+    }*/
     </style>
 
   </head>
@@ -49,7 +59,7 @@
     <p>Target the direct-child of an element using the children() method: (children() orange)</p>
 
     <div class="descendants">
-      <div style="width: 500px" id="parent">Parent Div
+      <div style="width: 100%;" id="parent">Parent Div
         <div>Child
           <div>Grand Child
             <div>Great Grand Child</div>
@@ -81,7 +91,7 @@
     <p>Target all the descendants all the way to the last descendant using the find() method: (find("div") purple)</p>
 
     <div class="descendants">
-      <div style="width: 500px" id="parent2">Parent Div
+      <div style="width: 100%;" id="parent2">Parent Div
         <div>Child
           <div>Grand Child
             <div>Great Grand Child</div>
